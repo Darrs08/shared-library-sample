@@ -1,7 +1,3 @@
-def build(){
-  sh 'mvn package'
-}
-
 def buildNum(){
   echo "Build image with tag: ${env.BUILD_ID}"
 }
