@@ -1,3 +1,3 @@
-def build{
+def build(){
   sh 'mvn package'
 }
