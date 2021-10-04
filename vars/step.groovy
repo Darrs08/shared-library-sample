@@ -11,7 +11,8 @@ def buildImage(user){
 }
 
 def pushImage(){
-  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
-  myapp.push("latest")
-  myapp.push("${env.BUILD_ID}")
+  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
+    myapp.push("latest")
+    myapp.push("${env.BUILD_ID}")
+  }
 }
