@@ -7,7 +7,7 @@ def buildImage(user){
 }
 
 def pushImage(dockerCred){
-  docker.withRegistry('https://registry.hub.docker.com', '${dockerCred}'){
+  docker.withRegistry('https://registry.hub.docker.com', ${dockerCred}){
     myapp.push("latest")
     myapp.push("${env.BUILD_ID}")
   }
