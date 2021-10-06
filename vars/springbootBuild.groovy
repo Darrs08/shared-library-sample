@@ -20,7 +20,7 @@ pipeline {
             steps {
                  script {
                     step.buildNum()
-                    step.buildImage('darrs08')
+                    step.buildImage('darrs08','ledger-service')
                 }
             }
         }
