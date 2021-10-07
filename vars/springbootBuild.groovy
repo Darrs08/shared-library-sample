@@ -1,4 +1,4 @@
-def call() {
+def call(name, dockerUsrName, containerName, dockerCredential) {
 pipeline {
   agent any
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
            steps {
               script {
-                  welcome('Darren')
+                welcome("${name}")
                   mavenPackage()
                }
            }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                  script {
                     step.buildNum()
-                    step.buildImage('darrs08','ledger-service')
+                    step.buildImage("${dockerUsrName}","${containerName}")
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage("Push image") {
              steps {
                 script {
-                    step.pushImage('dockerhub')
+                    step.pushImage("${dockerCredential}")
                   }
               }
           }
