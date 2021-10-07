@@ -1,4 +1,4 @@
-def call(dockerUsrName, containerName, dockerCredential) {
+def mvnBuild(dockerUsrName, containerName, dockerCredential) {
 pipeline {
   agent any
 
