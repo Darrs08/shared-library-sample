@@ -1,5 +1,5 @@
 @Library('shared-library') _
-def mvnBuild(dockerUsrName, containerName, dockerCredential) {
+def mvnBuild() {
 pipeline {
   agent any
 
@@ -20,7 +20,7 @@ pipeline {
             steps {
                  script {
                     step.buildNum()
-                    step.buildImage("${dockerUsrName}", "${containerName}")
+                    step.buildImage("darrs08", "ledger-service")
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage("Push image") {
              steps {
                 script {
-                    step.pushImage("${dockerCredential}")
+                    step.pushImage("dockerhub")
                   }
               }
           }
