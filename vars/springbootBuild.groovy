@@ -1,4 +1,4 @@
-def call( dockerUsrName, containerName, dockerCredential) {
+def call(dockerUsrName, containerName, dockerCredential) {
 pipeline {
   agent any
 
