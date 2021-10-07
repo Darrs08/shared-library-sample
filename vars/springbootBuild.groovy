@@ -10,8 +10,7 @@ pipeline {
         stage('Build') {
            steps {
               script {
-                
-                  mavenPackage()
+                 mavenPackage()
                }
            }
        }
