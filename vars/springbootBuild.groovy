@@ -19,7 +19,7 @@ pipeline {
             steps {
                  script {
                     step.buildNum()
-                    step.buildImage("'${dockerUsrName}'", "'${containerName}'")
+                    step.buildImage(${dockerUsrName}, ${containerName})
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
         stage("Push image") {
              steps {
                 script {
-                    step.pushImage("'${dockerCredential}'")
+                    step.pushImage(${dockerCredential})
                   }
               }
           }
