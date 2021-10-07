@@ -1,5 +1,4 @@
-@Library('shared-library') _
-def mvnBuild() {
+def call() {
 pipeline {
   agent any
 
