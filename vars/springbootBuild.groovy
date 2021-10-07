@@ -1,4 +1,4 @@
-def call(name, dockerUsrName, containerName, dockerCredential) {
+def call( dockerUsrName, containerName, dockerCredential) {
 pipeline {
   agent any
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
            steps {
               script {
-                welcome("${name}")
+                
                   mavenPackage()
                }
            }
