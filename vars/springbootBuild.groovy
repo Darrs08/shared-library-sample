@@ -1,3 +1,4 @@
+@Library('shared-library') _
 def mvnBuild(dockerUsrName, containerName, dockerCredential) {
 pipeline {
   agent any
